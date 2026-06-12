@@ -1,0 +1,14 @@
+.env
+venv/
+data/raw/
+__pycache__/
+*.pyc
+.DS_Store
+airflow/airflow.db
+airflow/logs/
+airflow/*.json
+airflow/*.cfg
+models/outputs/*.pkl
+*.db
+*.db-shm
+*.db-wal

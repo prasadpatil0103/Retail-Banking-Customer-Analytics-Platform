@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="income_band", model=get_where_subquery(ref('mart_customer_risk'))) }}

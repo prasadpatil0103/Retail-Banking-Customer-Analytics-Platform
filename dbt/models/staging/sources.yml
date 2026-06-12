@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: banking
+    database: dev
+    schema: public
+    tables:
+      - name: fact_loans
+      - name: dim_customers
+      - name: dim_applications
+      - name: dim_date

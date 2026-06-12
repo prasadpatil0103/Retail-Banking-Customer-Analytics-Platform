@@ -1,0 +1,1453 @@
+==================== 2026-06-09T23:27:31.110449Z | 019eaeb6-6b16-7e42-8e54-93e3082baa18 ====================
+23:27:31.113446 [info ]: Installing dbt project and profile setup
+23:27:31.121201 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:27:31.123372 [info ]: Success Project created successfully!
+23:27:31.124002 [info ]: Info Project name: jaffle_shop
+23:27:31.124028 [info ]: Info Project directory: jaffle_shop
+23:27:31.124046 [info ]: Info Setting up your profile...
+23:27:31.126315 [info ]: Loading ~/.dbt/profiles.yml
+23:27:31.135094 [info ]: Info Creating new profile...
+23:27:54.415256 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+23:29:24.361377 [error]: [IoError (dbt1001)]: Failed to get input for database: IO error: read interrupted
+23:29:24.608573 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' with 1 error [1m 53s]
+==================== 2026-06-09T23:29:30.352400Z | 019eaeb8-3cef-7742-81fb-02c5b3dd7041 ====================
+23:29:30.352476 [info ]: Installing dbt project and profile setup
+23:29:30.352564 [info ]: Warning Directory 'jaffle_shop' already exists, using 'jaffle_shop_1' instead
+23:29:30.356536 [info ]: Info Created .vscode/extensions.json with dbt extension recommendation
+23:29:30.356567 [info ]: Success Project created successfully!
+23:29:30.356578 [info ]: Info Project name: jaffle_shop_1
+23:29:30.356590 [info ]: Info Project directory: jaffle_shop_1
+23:29:30.356600 [info ]: Info Setting up your profile...
+23:29:30.356719 [info ]: Loading ~/.dbt/profiles.yml
+23:29:30.357179 [info ]: Info Creating new profile...
+23:29:33.218003 [info ]: No dbt_cloud.yml found - proceeding without cloud pre-population
+23:31:42.643956 [info ]: Success Profile written to /Users/prasadpatil/.dbt/profiles.yml
+23:31:42.644518 [info ]: Validating profile inputs, adapters, and connection
+
+23:31:42.644689 [info ]: dbt-core 2.0.0-alpha.1
+23:31:42.647331 [info ]: Started loading project
+23:31:42.665018 [info ]: Loading ~/.dbt/profiles.yml
+23:31:42.675302 [info ]: Finished loading project [  0.03s]
+23:31:42.676198 [info ]: Started debugging
+23:31:42.676892 [info ]: Debugging profile: dev
+23:31:42.676914 [info ]: Debugging dbt version: 2.0.0-alpha.1
+23:31:42.676922 [info ]: Debugging platform: macos aarch64 (unix)
+23:31:42.677215 [info ]: Debugging adapter type: redshift (remote)
+23:31:42.709615 [info ]: Debugging dependencies:
+  git: OK
+23:31:42.713869 [info ]: Debugging connection:
+  "port": 5439,
+  "database": "dev",
+  "schema": "analytics",
+  "ra3_node": false,
+  "datasharing": false,
+  "method": "database",
+  "host": "banking-workgroup.608325783808.us-east-1.redshift-serverless.amazonaws.com",
+  "user": "dbadmin"
+23:32:25.317231 [debug]: Query executed on node unknown:
+select 1 as id
+23:32:25.319148 [info ]: Debugging connection test: OK
+23:32:25.319678 [info ]: Debugged All checks passed!
+23:32:25.320415 [info ]: Finished debugging [ 42.64s]
+23:32:25.531349 [info ]: 
+==================== Execution Summary =====================
+Finished 'init' successfully for target 'dev' [2m 55s]
+==================== 2026-06-09T23:40:33.303212Z | 019eaec2-5a84-74b0-a016-a9b185b89e24 ====================
+23:40:33.306185 [info ]: dbt-core 2.0.0-alpha.1
+23:40:33.309182 [info ]: Started loading project
+23:40:33.325634 [info ]: Loading ~/.dbt/profiles.yml
+23:40:33.328627 [info ]: Finished loading project [  0.02s]
+23:40:33.330049 [error]: [IoError (dbt1001)]: Profile 'dev' not found in profiles.yml
+  --> dbt_project.yml:5:10
+23:40:33.661985 [info ]: 
+==================== Execution Summary =====================
+Finished 'build' with 1 error [358ms]
+==================== 2026-06-09T23:41:53.289863Z | 019eaec3-92fb-7db2-821a-29bbe6236edf ====================
+23:41:53.291810 [info ]: dbt-core 2.0.0-alpha.1
+23:41:53.295240 [info ]: Started loading project
+23:41:53.313779 [info ]: Loading ~/.dbt/profiles.yml
+23:41:53.344758 [debug]:    Started loading packages
+23:41:53.353832 [debug]:     Loaded [  0.01s] packages
+23:41:53.357490 [info ]: Finished loading project [  0.06s]
+23:41:53.359316 [info ]: Started parsing
+23:41:53.393801 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+23:41:53.394589 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+23:41:53.406197 [debug]: Finished parsing models/marts/mart_application_funnel.sql [  0.01s]
+23:41:53.406546 [debug]: Finished parsing models/marts/mart_customer_risk.sql [  0.00s]
+23:41:53.406767 [debug]: Finished parsing models/marts/mart_loan_performance.sql [  0.00s]
+23:41:53.406986 [debug]: Finished parsing models/staging/stg_applications.sql [  0.00s]
+23:41:53.407198 [debug]: Finished parsing models/staging/stg_applications_dim.sql [  0.00s]
+23:41:53.407387 [debug]: Finished parsing models/staging/stg_customers.sql [  0.00s]
+23:41:53.411759 [error]: [DbtYamlValidationError (dbt1159)]: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:29:23
+23:41:53.412465 [error]: [DbtYamlValidationError (dbt1159)]: Deprecated test arguments: ["values"] at top-level detected. Please migrate to the new format under the 'arguments' field: https://docs.getdbt.com/reference/deprecations#missingargumentspropertyingenerictestdeprecation.
+  --> models/marts/schema.yml:24:23
+23:41:53.415038 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_contract_type.sql [  0.00s]
+23:41:53.415206 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_total_applications.sql [  0.00s]
+23:41:53.415341 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_income_band.sql [  0.00s]
+23:41:53.415520 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__8218e9e11881d0a67828ef2a6b1b4504.sql [  0.00s]
+23:41:53.415660 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_risk_tier.sql [  0.00s]
+23:41:53.415786 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__26ef3cbb78ca16779f4d2cef03dcc5e4.sql [  0.00s]
+23:41:53.415909 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_contract_type.sql [  0.00s]
+23:41:53.416031 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_default_rate_pct.sql [  0.00s]
+23:41:53.416153 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_total_applications.sql [  0.00s]
+23:41:53.421153 [info ]: Finished parsing [  0.06s]
+23:41:53.752235 [info ]: suggestion: Run 'dbt deps' to see the latest fusion compatible packages. For compatibility errors, try the autofix script: https://github.com/dbt-labs/dbt-autofix
+23:41:53.752235 [info ]: 
+==================== Execution Summary =====================
+Finished 'build' with 2 errors for target 'dev' [462ms]
+==================== 2026-06-09T23:42:21.110644Z | 019eaec3-ffa6-7d01-8497-d5888183e115 ====================
+23:42:21.113891 [info ]: dbt-core 2.0.0-alpha.1
+23:42:21.117627 [info ]: Started loading project
+23:42:21.134134 [info ]: Loading ~/.dbt/profiles.yml
+23:42:21.156736 [debug]:    Started loading packages
+23:42:21.162435 [debug]:     Loaded [  0.01s] packages
+23:42:21.167365 [info ]: Finished loading project [  0.05s]
+23:42:21.168946 [info ]: Started parsing
+23:42:21.195911 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+23:42:21.196348 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+23:42:21.205829 [debug]: Finished parsing models/marts/mart_application_funnel.sql [  0.01s]
+23:42:21.206161 [debug]: Finished parsing models/marts/mart_customer_risk.sql [  0.00s]
+23:42:21.206376 [debug]: Finished parsing models/marts/mart_loan_performance.sql [  0.00s]
+23:42:21.206570 [debug]: Finished parsing models/staging/stg_applications.sql [  0.00s]
+23:42:21.206756 [debug]: Finished parsing models/staging/stg_applications_dim.sql [  0.00s]
+23:42:21.206939 [debug]: Finished parsing models/staging/stg_customers.sql [  0.00s]
+23:42:21.212142 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_contract_type.sql [  0.00s]
+23:42:21.212294 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_total_applications.sql [  0.00s]
+23:42:21.212443 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_income_band.sql [  0.00s]
+23:42:21.212599 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__8218e9e11881d0a67828ef2a6b1b4504.sql [  0.00s]
+23:42:21.212739 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_risk_tier.sql [  0.00s]
+23:42:21.212872 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__26ef3cbb78ca16779f4d2cef03dcc5e4.sql [  0.00s]
+23:42:21.213000 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_contract_type.sql [  0.00s]
+23:42:21.213125 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_default_rate_pct.sql [  0.00s]
+23:42:21.213249 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_total_applications.sql [  0.00s]
+23:42:21.217098 [info ]: Finished parsing [  0.05s]
+23:42:21.218852 [info ]: Started scheduling
+23:42:21.220336 [info ]: Finished scheduling [  0.00s]
+23:42:21.223343 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "dim_customers" }) and interval: None
+23:42:21.223739 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "fact_loans" }) and interval: None
+23:42:21.223747 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "dim_applications" }) and interval: None
+23:42:21.229369 [info ]: Started building task graph
+23:42:21.233060 [info ]: Finished building task graph [  0.00s]
+23:42:22.045672 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select distinct nspname from pg_namespace
+23:42:34.855052 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create schema if not exists "analytics"
+23:42:34.856509 [info ]: Started rendering (15 nodes)
+23:42:34.857194 [info ]: Started model analytics.stg_customers
+23:42:34.857933 [debug]: Started rendering model analytics.stg_customers
+23:42:34.858201 [info ]: Started model analytics.stg_applications_dim
+23:42:34.858217 [debug]: Started rendering model analytics.stg_applications_dim
+23:42:34.858241 [info ]: Started model analytics.stg_applications
+23:42:34.858249 [debug]: Started rendering model analytics.stg_applications
+23:42:34.867324 [debug]: Compiled SQL for node model.banking_analytics.stg_customers at target/compiled/banking_analytics/models/staging/stg_customers.sql
+23:42:34.867343 [debug]: Compiled SQL for node model.banking_analytics.stg_applications_dim at target/compiled/banking_analytics/models/staging/stg_applications_dim.sql
+23:42:34.867324 [debug]: Compiled SQL for node model.banking_analytics.stg_applications at target/compiled/banking_analytics/models/staging/stg_applications.sql
+23:42:34.869437 [debug]: Finished rendering [  0.01s] model analytics.stg_customers [success]
+23:42:34.869587 [info ]: Started running (15 nodes)
+23:42:34.869645 [info ]: Started running model analytics.stg_customers
+23:42:34.869677 [debug]: Finished rendering [  0.01s] model analytics.stg_applications [success]
+23:42:34.869718 [info ]: Started running model analytics.stg_applications
+23:42:34.869735 [debug]: Finished rendering [  0.01s] model analytics.stg_applications_dim [success]
+23:42:34.869768 [info ]: Started running model analytics.stg_applications_dim
+23:42:34.984417 [debug]: Query executed on node model.banking_analytics.stg_customers:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:42:34.986279 [debug]: Writing runtime sql for node "model.banking_analytics.stg_customers"
+23:42:35.285443 [debug]: Query executed on node model.banking_analytics.stg_applications:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:42:35.287103 [debug]: Writing runtime sql for node "model.banking_analytics.stg_applications"
+23:42:35.583308 [debug]: Query executed on node model.banking_analytics.stg_applications_dim:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:42:35.585169 [debug]: Writing runtime sql for node "model.banking_analytics.stg_applications_dim"
+23:42:35.991037 [debug]: Query executed on node model.banking_analytics.stg_customers:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_customers", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_customers" as (
+    with source as (
+    select * from "dev"."public"."dim_customers"
+),
+
+renamed as (
+    select
+        customer_id,
+        age_years,
+        income_total,
+        income_type,
+        education_type,
+        family_status,
+        family_members,
+        employment_years,
+        region_rating
+    from source
+)
+
+select * from renamed
+  ) 
+23:42:35.992753 [info ]: Finished running [  1.12s] model analytics.stg_customers [success]
+23:42:35.992802 [info ]:  Succeeded [  1.13s] model analytics.stg_customers (view)
+23:42:36.243073 [debug]: Query executed on node model.banking_analytics.stg_applications:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_applications", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_applications" as (
+    with source as (
+    select * from "dev"."public"."fact_loans"
+),
+
+renamed as (
+    select
+        customer_id,
+        contract_type,
+        credit_amount,
+        annuity_amount,
+        income_total,
+        goods_price,
+        debt_to_income_ratio,
+        credit_income_ratio,
+        ext_source_mean,
+        age_years,
+        employment_years,
+        region_rating,
+        income_type,
+        education_type,
+        target,
+        ingestion_timestamp
+    from source
+)
+
+select * from renamed
+  ) 
+23:42:36.245163 [info ]: Finished running [  1.38s] model analytics.stg_applications [success]
+23:42:36.245329 [info ]:  Succeeded [  1.39s] model analytics.stg_applications (view)
+23:42:36.245470 [info ]: Started model analytics.mart_loan_performance
+23:42:36.245503 [debug]: Started rendering model analytics.mart_loan_performance
+23:42:36.245544 [info ]: Started model analytics.mart_application_funnel
+23:42:36.245554 [debug]: Started rendering model analytics.mart_application_funnel
+23:42:36.245575 [info ]: Started model analytics.mart_customer_risk
+23:42:36.245590 [debug]: Started rendering model analytics.mart_customer_risk
+23:42:36.248482 [debug]: Compiled SQL for node model.banking_analytics.mart_customer_risk at target/compiled/banking_analytics/models/marts/mart_customer_risk.sql
+23:42:36.248515 [debug]: Compiled SQL for node model.banking_analytics.mart_loan_performance at target/compiled/banking_analytics/models/marts/mart_loan_performance.sql
+23:42:36.248548 [debug]: Compiled SQL for node model.banking_analytics.mart_application_funnel at target/compiled/banking_analytics/models/marts/mart_application_funnel.sql
+23:42:36.248716 [debug]: Finished rendering [  0.00s] model analytics.mart_customer_risk [success]
+23:42:36.248862 [info ]: Started running model analytics.mart_customer_risk
+23:42:36.248902 [debug]: Finished rendering [  0.00s] model analytics.mart_loan_performance [success]
+23:42:36.248937 [info ]: Started running model analytics.mart_loan_performance
+23:42:36.248957 [debug]: Finished rendering [  0.00s] model analytics.mart_application_funnel [success]
+23:42:36.248985 [info ]: Started running model analytics.mart_application_funnel
+23:42:36.257856 [debug]: Writing runtime sql for node "model.banking_analytics.mart_application_funnel"
+23:42:36.258013 [debug]: Writing runtime sql for node "model.banking_analytics.mart_customer_risk"
+23:42:36.258760 [debug]: Writing runtime sql for node "model.banking_analytics.mart_loan_performance"
+23:42:36.454041 [debug]: Query executed on node model.banking_analytics.stg_applications_dim:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_applications_dim", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_applications_dim" as (
+    with source as (
+    select * from "dev"."public"."dim_applications"
+),
+
+renamed as (
+    select
+        customer_id,
+        contract_type,
+        credit_amount,
+        annuity_amount,
+        goods_price,
+        ext_source_1,
+        ext_source_2,
+        ext_source_3,
+        ext_source_mean
+    from source
+)
+
+select * from renamed
+  ) 
+23:42:36.454900 [info ]: Finished running [  1.59s] model analytics.stg_applications_dim [success]
+23:42:36.454956 [info ]:  Succeeded [  1.60s] model analytics.stg_applications_dim (view)
+23:42:36.616937 [debug]: Query executed on node model.banking_analytics.mart_application_funnel:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_application_funnel", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_application_funnel__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+funnel as (
+    select
+        contract_type,
+        income_type,
+        region_rating,
+        count(*)                                as total_applications,
+        sum(case when target = 0 then 1 else 0 end) as approved_no_default,
+        sum(target)                             as defaults,
+        round(avg(target) * 100, 2)             as default_rate_pct,
+        round(avg(credit_amount), 2)            as avg_loan_amount,
+        round(avg(income_total), 2)             as avg_income,
+        round(min(credit_amount), 2)            as min_loan_amount,
+        round(max(credit_amount), 2)            as max_loan_amount,
+        round(avg(debt_to_income_ratio), 4)     as avg_dti
+    from base
+    group by 1, 2, 3
+)
+
+select * from final
+  )
+23:42:37.625949 [error]: [DbDriverFailed (dbt1308)]: Database Error in model mart_application_funnel (target/run/banking_analytics/models/marts/mart_application_funnel.sql)
+  [redshift] Could not prepare statement: ERROR: relation "final" does not exist (SQLSTATE 42P01)
+  (in compiled/banking_analytics/models/marts/mart_application_funnel.sql:1:13)
+23:42:37.626483 [info ]: Finished running [  1.38s] model analytics.mart_application_funnel [error]
+23:42:37.626576 [info ]:     Failed [  1.38s] model analytics.mart_application_funnel (table)
+23:42:37.626790 [info ]: Started test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:42:37.626824 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:42:37.626850 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications [skipped]
+23:42:37.626902 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:42:37.626918 [info ]: Finished running [  0.00s] test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications [skipped]
+23:42:37.626946 [info ]:    Skipped [-------] test  not_null_mart_application_funnel_total_applications (models/marts/schema.yml:41:13)
+23:42:37.626972 [info ]: Started test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:42:37.626981 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:42:37.626993 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type [skipped]
+23:42:37.627018 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:42:37.627028 [info ]: Finished running [  0.00s] test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type [skipped]
+23:42:37.627047 [info ]:    Skipped [-------] test  not_null_mart_application_funnel_contract_type (models/marts/schema.yml:38:13)
+23:42:51.339156 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_loan_performance__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+final as (
+    select
+        contract_type,
+        income_type,
+        education_type,
+        region_rating,
+        count(*)                                    as total_applications,
+        sum(target)                                 as total_defaults,
+        round(avg(target) * 100, 2)                 as default_rate_pct,
+        round(avg(credit_amount), 2)                as avg_credit_amount,
+        round(avg(annuity_amount), 2)               as avg_annuity_amount,
+        round(avg(income_total), 2)                 as avg_income,
+        round(avg(debt_to_income_ratio), 4)         as avg_debt_to_income,
+        round(avg(ext_source_mean), 4)              as avg_ext_source_score
+    from base
+    group by 1, 2, 3, 4
+)
+
+select * from final
+  )
+23:42:51.856065 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_customer_risk__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+risk_scored as (
+    select
+        customer_id,
+        age_years,
+        income_total,
+        income_type,
+        education_type,
+        credit_amount,
+        annuity_amount,
+        debt_to_income_ratio,
+        ext_source_mean,
+        target,
+        case
+            when ext_source_mean >= 0.6 then 'Low Risk'
+            when ext_source_mean >= 0.4 then 'Medium Risk'
+            else 'High Risk'
+        end as risk_tier,
+        case
+            when income_total < 90000  then 'Low Income'
+            when income_total < 180000 then 'Mid Income'
+            else 'High Income'
+        end as income_band,
+        case
+            when debt_to_income_ratio < 0.2  then 'Low DTI'
+            when debt_to_income_ratio < 0.4  then 'Medium DTI'
+            else 'High DTI'
+        end as dti_band
+    from base
+),
+
+final as (
+    select
+        risk_tier,
+        income_band,
+        dti_band,
+        income_type,
+        education_type,
+        count(*)                            as total_customers,
+        sum(target)                         as total_defaults,
+        round(avg(target) * 100, 2)         as default_rate_pct,
+        round(avg(income_total), 2)         as avg_income,
+        round(avg(credit_amount), 2)        as avg_credit_amount,
+        round(avg(ext_source_mean), 4)      as avg_ext_score
+    from risk_scored
+    group by 1, 2, 3, 4, 5
+)
+
+select * from final
+  )
+23:42:53.449923 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_loan_performance__dbt_tmp" rename to "mart_loan_performance"
+23:42:53.453358 [debug]: Applying DROP to: "dev"."analytics"."mart_loan_performance__dbt_backup"
+23:42:54.052351 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_customer_risk__dbt_tmp" rename to "mart_customer_risk"
+23:42:54.054935 [debug]: Applying DROP to: "dev"."analytics"."mart_customer_risk__dbt_backup"
+23:42:54.164297 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+drop table if exists "dev"."analytics"."mart_loan_performance__dbt_backup" cascade
+23:42:54.165471 [info ]: Finished running [ 17.92s] model analytics.mart_loan_performance [success]
+23:42:54.165625 [info ]:  Succeeded [ 17.92s] model analytics.mart_loan_performance (table)
+23:42:54.165853 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:42:54.165887 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:42:54.165931 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:42:54.165940 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:42:54.165960 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:42:54.165969 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:42:54.168621 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+drop table if exists "dev"."analytics"."mart_customer_risk__dbt_backup" cascade
+23:42:54.169605 [info ]: Finished running [ 17.92s] model analytics.mart_customer_risk [success]
+23:42:54.169671 [info ]:  Succeeded [ 17.92s] model analytics.mart_customer_risk (table)
+23:42:54.169881 [info ]: Started test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:42:54.169898 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:42:54.169937 [info ]: Started test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:42:54.169947 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:42:54.169966 [info ]: Started test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:42:54.169977 [debug]: Started rendering test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:42:54.169995 [info ]: Started test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:42:54.170005 [debug]: Started rendering test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:42:54.177930 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_customer_risk_risk_tier.sql
+23:42:54.177930 [debug]: Compiled SQL for node test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360 at target/compiled/banking_analytics/target/generic_tests/accepted_values_mart_customer__26ef3cbb78ca16779f4d2cef03dcc5e4.sql
+23:42:54.178377 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca at target/compiled/banking_analytics/target/generic_tests/not_null_mart_customer_risk_income_band.sql
+23:42:54.178481 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_default_rate_pct.sql
+23:42:54.178499 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_total_applications.sql
+23:42:54.178442 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk [success]
+23:42:54.178550 [debug]: Compiled SQL for node test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8 at target/compiled/banking_analytics/target/generic_tests/accepted_values_mart_customer__8218e9e11881d0a67828ef2a6b1b4504.sql
+23:42:54.178549 [info ]: Started running test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:42:54.178563 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_contract_type.sql
+23:42:54.178596 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier [success]
+23:42:54.178682 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:42:54.178718 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct [success]
+23:42:54.178751 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:42:54.178769 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications [success]
+23:42:54.178822 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:42:54.178875 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band [success]
+23:42:54.179012 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:42:54.179045 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type [success]
+23:42:54.179058 [debug]: Started connection limit wait
+23:42:54.179074 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:42:54.179093 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income [success]
+23:42:54.179113 [info ]: Finished rendering [ 19.32s] (15 nodes, 2 skipped, 0 errors)
+23:42:54.179382 [info ]: Started running test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:42:54.179490 [debug]: Started connection limit wait
+23:42:54.179523 [debug]: Started connection limit wait
+23:42:54.182263 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2"
+23:42:54.182322 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3"
+23:42:54.182330 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa"
+23:42:54.182439 [debug]: Writing runtime sql for node "test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360"
+23:42:54.510467 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_applications
+from "dev"."analytics"."mart_loan_performance"
+where total_applications is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:54.510467 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select default_rate_pct
+from "dev"."analytics"."mart_loan_performance"
+where default_rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:54.512540 [debug]: Finished connection limit wait [  0.33s]
+23:42:54.512594 [debug]: Finished connection limit wait [  0.33s]
+23:42:54.512694 [info ]: Finished running [  0.33s] test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct [pass]
+23:42:54.512830 [info ]:     Passed [  0.34s] test  not_null_mart_loan_performance_default_rate_pct
+23:42:54.512941 [info ]: Finished running [  0.33s] test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications [pass]
+23:42:54.512974 [info ]:     Passed [  0.35s] test  not_null_mart_loan_performance_total_applications
+23:42:54.516514 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca"
+23:42:54.516810 [debug]: Writing runtime sql for node "test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8"
+23:42:54.527237 [debug]: Query executed on node test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        risk_tier as value_field,
+        count(*) as n_records
+
+    from "dev"."analytics"."mart_customer_risk"
+    group by risk_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Low Risk','Medium Risk','High Risk'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:54.527856 [debug]: Finished connection limit wait [  0.35s]
+23:42:54.527875 [info ]: Finished running [  0.35s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk [pass]
+23:42:54.527937 [info ]:     Passed [  0.36s] test  accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:42:54.529134 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef"
+23:42:54.757033 [debug]: Query executed on node test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        income_band as value_field,
+        count(*) as n_records
+
+    from "dev"."analytics"."mart_customer_risk"
+    group by income_band
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Low Income','Mid Income','High Income'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:54.758243 [info ]: Finished running [  0.25s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income [pass]
+23:42:54.758323 [info ]:     Passed [  0.25s] test  accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:42:55.043735 [debug]: Query executed on node test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select risk_tier
+from "dev"."analytics"."mart_customer_risk"
+where risk_tier is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:55.045013 [info ]: Finished running [  0.87s] test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier [pass]
+23:42:55.045127 [info ]:     Passed [  0.87s] test  not_null_mart_customer_risk_risk_tier
+23:42:55.045420 [debug]: Query executed on node test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select income_band
+from "dev"."analytics"."mart_customer_risk"
+where income_band is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:55.046270 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select contract_type
+from "dev"."analytics"."mart_loan_performance"
+where contract_type is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:42:55.046320 [info ]: Finished running [  0.53s] test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band [pass]
+23:42:55.046426 [info ]:     Passed [  0.54s] test  not_null_mart_customer_risk_income_band
+23:42:55.046930 [info ]: Finished running [  0.52s] test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type [pass]
+23:42:55.046991 [info ]: Finished running [ 20.18s] (15 nodes, 2 skipped, 1 errors)
+23:42:55.047064 [info ]:     Passed [  0.53s] test  not_null_mart_loan_performance_contract_type
+23:42:55.132282 [info ]: 
+==================== Execution Summary =====================
+Finished 'build' with 1 error for target 'dev' [34.0s]
+Processed: 6 models | 9 tests
+Summary: 15 total | 12 success | 1 error | 2 skipped
+==================== 2026-06-09T23:46:25.981180Z | 019eaec7-bc2b-7603-a41d-558483862dbe ====================
+23:46:25.984671 [info ]: dbt-core 2.0.0-alpha.1
+23:46:25.988812 [info ]: Started loading project
+23:46:26.005167 [info ]: Loading ~/.dbt/profiles.yml
+23:46:26.036459 [debug]:    Started loading packages
+23:46:26.044510 [debug]:     Loaded [  0.01s] packages
+23:46:26.049883 [info ]: Finished loading project [  0.06s]
+23:46:26.051932 [info ]: Started parsing
+23:46:26.085182 [debug]: Finished parsing models/marts/schema.yml [  0.00s]
+23:46:26.085951 [debug]: Finished parsing models/staging/sources.yml [  0.00s]
+23:46:26.100453 [debug]: Finished parsing models/marts/mart_application_funnel.sql [  0.01s]
+23:46:26.100797 [debug]: Finished parsing models/marts/mart_customer_risk.sql [  0.00s]
+23:46:26.101007 [debug]: Finished parsing models/marts/mart_loan_performance.sql [  0.00s]
+23:46:26.101202 [debug]: Finished parsing models/staging/stg_applications.sql [  0.00s]
+23:46:26.101380 [debug]: Finished parsing models/staging/stg_applications_dim.sql [  0.00s]
+23:46:26.101558 [debug]: Finished parsing models/staging/stg_customers.sql [  0.00s]
+23:46:26.108475 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_contract_type.sql [  0.00s]
+23:46:26.108649 [debug]: Finished parsing target/generic_tests/not_null_mart_application_funnel_total_applications.sql [  0.00s]
+23:46:26.108796 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_income_band.sql [  0.00s]
+23:46:26.108944 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__8218e9e11881d0a67828ef2a6b1b4504.sql [  0.00s]
+23:46:26.109066 [debug]: Finished parsing target/generic_tests/not_null_mart_customer_risk_risk_tier.sql [  0.00s]
+23:46:26.109180 [debug]: Finished parsing target/generic_tests/accepted_values_mart_customer__26ef3cbb78ca16779f4d2cef03dcc5e4.sql [  0.00s]
+23:46:26.109292 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_contract_type.sql [  0.00s]
+23:46:26.109402 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_default_rate_pct.sql [  0.00s]
+23:46:26.109511 [debug]: Finished parsing target/generic_tests/not_null_mart_loan_performance_total_applications.sql [  0.00s]
+23:46:26.114682 [info ]: Finished parsing [  0.06s]
+23:46:26.116665 [info ]: Started scheduling
+23:46:26.118819 [info ]: Finished scheduling [  0.00s]
+23:46:26.120901 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "fact_loans" }) and interval: None
+23:46:26.121022 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "dim_customers" }) and interval: None
+23:46:26.121028 [debug]: Initializing schema store with entry: Frontier(CanonicalFqn { catalog: "dev", schema: "public", table: "dim_applications" }) and interval: None
+23:46:26.127352 [info ]: Started building task graph
+23:46:26.130980 [info ]: Finished building task graph [  0.00s]
+23:46:26.902239 [debug]: Query executed on node unknown:
+/* {"app": "dbt", "connection_name": "", "dbt_version": "2.0.0", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select distinct nspname from pg_namespace
+23:46:26.905879 [info ]: Started rendering (15 nodes)
+23:46:26.906357 [info ]: Started model analytics.stg_customers
+23:46:26.906869 [debug]: Started rendering model analytics.stg_customers
+23:46:26.907083 [info ]: Started model analytics.stg_applications_dim
+23:46:26.907098 [debug]: Started rendering model analytics.stg_applications_dim
+23:46:26.907119 [info ]: Started model analytics.stg_applications
+23:46:26.907129 [debug]: Started rendering model analytics.stg_applications
+23:46:26.913387 [debug]: Compiled SQL for node model.banking_analytics.stg_applications at target/compiled/banking_analytics/models/staging/stg_applications.sql
+23:46:26.913385 [debug]: Compiled SQL for node model.banking_analytics.stg_customers at target/compiled/banking_analytics/models/staging/stg_customers.sql
+23:46:26.913381 [debug]: Compiled SQL for node model.banking_analytics.stg_applications_dim at target/compiled/banking_analytics/models/staging/stg_applications_dim.sql
+23:46:26.914554 [debug]: Finished rendering [  0.01s] model analytics.stg_customers [success]
+23:46:26.914648 [info ]: Started running (15 nodes)
+23:46:26.914690 [info ]: Started running model analytics.stg_customers
+23:46:26.914711 [debug]: Finished rendering [  0.01s] model analytics.stg_applications_dim [success]
+23:46:26.914747 [info ]: Started running model analytics.stg_applications_dim
+23:46:26.914765 [debug]: Finished rendering [  0.01s] model analytics.stg_applications [success]
+23:46:26.914792 [info ]: Started running model analytics.stg_applications
+23:46:27.018447 [debug]: Query executed on node model.banking_analytics.stg_applications:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:46:27.020489 [debug]: Writing runtime sql for node "model.banking_analytics.stg_applications"
+23:46:27.335158 [debug]: Query executed on node model.banking_analytics.stg_applications_dim:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:46:27.337032 [debug]: Writing runtime sql for node "model.banking_analytics.stg_applications_dim"
+23:46:27.683798 [debug]: Query executed on node model.banking_analytics.stg_applications:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_applications", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_applications" as (
+    with source as (
+    select * from "dev"."public"."fact_loans"
+),
+
+renamed as (
+    select
+        customer_id,
+        contract_type,
+        credit_amount,
+        annuity_amount,
+        income_total,
+        goods_price,
+        debt_to_income_ratio,
+        credit_income_ratio,
+        ext_source_mean,
+        age_years,
+        employment_years,
+        region_rating,
+        income_type,
+        education_type,
+        target,
+        ingestion_timestamp
+    from source
+)
+
+select * from renamed
+  ) 
+23:46:27.684492 [debug]: Query executed on node model.banking_analytics.stg_customers:
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    'table' as type
+from information_schema.tables
+where table_schema ilike 'analytics'
+and table_type = 'BASE TABLE'
+union all
+select
+    table_catalog as database,
+    table_name as name,
+    table_schema as schema,
+    case
+    when view_definition ilike '%create materialized view%'
+        then 'materialized_view'
+    else 'view'
+    end as type
+from information_schema.views
+where table_schema ilike 'analytics'
+23:46:27.685882 [debug]: Writing runtime sql for node "model.banking_analytics.stg_customers"
+23:46:27.687688 [info ]: Finished running [  0.77s] model analytics.stg_applications [success]
+23:46:27.687820 [info ]:  Succeeded [  0.78s] model analytics.stg_applications (view)
+23:46:27.687950 [info ]: Started model analytics.mart_loan_performance
+23:46:27.687977 [debug]: Started rendering model analytics.mart_loan_performance
+23:46:27.688017 [info ]: Started model analytics.mart_application_funnel
+23:46:27.688034 [debug]: Started rendering model analytics.mart_application_funnel
+23:46:27.688055 [info ]: Started model analytics.mart_customer_risk
+23:46:27.688066 [debug]: Started rendering model analytics.mart_customer_risk
+23:46:27.689731 [debug]: Compiled SQL for node model.banking_analytics.mart_loan_performance at target/compiled/banking_analytics/models/marts/mart_loan_performance.sql
+23:46:27.689732 [debug]: Compiled SQL for node model.banking_analytics.mart_application_funnel at target/compiled/banking_analytics/models/marts/mart_application_funnel.sql
+23:46:27.689905 [debug]: Finished rendering [  0.00s] model analytics.mart_loan_performance [success]
+23:46:27.689979 [info ]: Started running model analytics.mart_loan_performance
+23:46:27.690006 [debug]: Finished rendering [  0.00s] model analytics.mart_application_funnel [success]
+23:46:27.690042 [info ]: Started running model analytics.mart_application_funnel
+23:46:27.690323 [debug]: Compiled SQL for node model.banking_analytics.mart_customer_risk at target/compiled/banking_analytics/models/marts/mart_customer_risk.sql
+23:46:27.690472 [debug]: Finished rendering [  0.00s] model analytics.mart_customer_risk [success]
+23:46:27.690527 [info ]: Started running model analytics.mart_customer_risk
+23:46:27.690557 [debug]: Started connection limit wait
+23:46:27.699724 [debug]: Writing runtime sql for node "model.banking_analytics.mart_loan_performance"
+23:46:27.699745 [debug]: Writing runtime sql for node "model.banking_analytics.mart_application_funnel"
+23:46:28.360732 [debug]: Query executed on node model.banking_analytics.stg_applications_dim:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_applications_dim", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_applications_dim" as (
+    with source as (
+    select * from "dev"."public"."dim_applications"
+),
+
+renamed as (
+    select
+        customer_id,
+        contract_type,
+        credit_amount,
+        annuity_amount,
+        goods_price,
+        ext_source_1,
+        ext_source_2,
+        ext_source_3,
+        ext_source_mean
+    from source
+)
+
+select * from renamed
+  ) 
+23:46:28.363779 [debug]: Finished connection limit wait [  0.67s]
+23:46:28.363802 [info ]: Finished running [  1.45s] model analytics.stg_applications_dim [success]
+23:46:28.363889 [info ]:  Succeeded [  1.46s] model analytics.stg_applications_dim (view)
+23:46:28.367818 [debug]: Writing runtime sql for node "model.banking_analytics.mart_customer_risk"
+23:46:28.647364 [debug]: Query executed on node model.banking_analytics.stg_customers:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.stg_customers", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create or replace view "dev"."analytics"."stg_customers" as (
+    with source as (
+    select * from "dev"."public"."dim_customers"
+),
+
+renamed as (
+    select
+        customer_id,
+        age_years,
+        income_total,
+        income_type,
+        education_type,
+        family_status,
+        family_members,
+        employment_years,
+        region_rating
+    from source
+)
+
+select * from renamed
+  ) 
+23:46:28.649448 [info ]: Finished running [  1.73s] model analytics.stg_customers [success]
+23:46:28.649595 [info ]:  Succeeded [  1.74s] model analytics.stg_customers (view)
+23:46:29.218373 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_loan_performance__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+final as (
+    select
+        contract_type,
+        income_type,
+        education_type,
+        region_rating,
+        count(*)                                    as total_applications,
+        sum(target)                                 as total_defaults,
+        round(avg(target) * 100, 2)                 as default_rate_pct,
+        round(avg(credit_amount), 2)                as avg_credit_amount,
+        round(avg(annuity_amount), 2)               as avg_annuity_amount,
+        round(avg(income_total), 2)                 as avg_income,
+        round(avg(debt_to_income_ratio), 4)         as avg_debt_to_income,
+        round(avg(ext_source_mean), 4)              as avg_ext_source_score
+    from base
+    group by 1, 2, 3, 4
+)
+
+select * from final
+  )
+23:46:29.554262 [debug]: Query executed on node model.banking_analytics.mart_application_funnel:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_application_funnel", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_application_funnel__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+funnel as (
+    select
+        contract_type,
+        income_type,
+        region_rating,
+        count(*)                                    as total_applications,
+        sum(case when target = 0 then 1 else 0 end) as approved_no_default,
+        sum(target)                                 as defaults,
+        round(avg(target) * 100, 2)                 as default_rate_pct,
+        round(avg(credit_amount), 2)                as avg_loan_amount,
+        round(avg(income_total), 2)                 as avg_income,
+        round(min(credit_amount), 2)                as min_loan_amount,
+        round(max(credit_amount), 2)                as max_loan_amount,
+        round(avg(debt_to_income_ratio), 4)         as avg_dti
+    from base
+    group by 1, 2, 3
+)
+
+select * from funnel
+  )
+23:46:29.919632 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+create  table
+    "dev"."analytics"."mart_customer_risk__dbt_tmp"
+    
+    
+    
+  as (
+    with base as (
+    select * from "dev"."analytics"."stg_applications"
+),
+
+risk_scored as (
+    select
+        customer_id,
+        age_years,
+        income_total,
+        income_type,
+        education_type,
+        credit_amount,
+        annuity_amount,
+        debt_to_income_ratio,
+        ext_source_mean,
+        target,
+        case
+            when ext_source_mean >= 0.6 then 'Low Risk'
+            when ext_source_mean >= 0.4 then 'Medium Risk'
+            else 'High Risk'
+        end as risk_tier,
+        case
+            when income_total < 90000  then 'Low Income'
+            when income_total < 180000 then 'Mid Income'
+            else 'High Income'
+        end as income_band,
+        case
+            when debt_to_income_ratio < 0.2  then 'Low DTI'
+            when debt_to_income_ratio < 0.4  then 'Medium DTI'
+            else 'High DTI'
+        end as dti_band
+    from base
+),
+
+final as (
+    select
+        risk_tier,
+        income_band,
+        dti_band,
+        income_type,
+        education_type,
+        count(*)                            as total_customers,
+        sum(target)                         as total_defaults,
+        round(avg(target) * 100, 2)         as default_rate_pct,
+        round(avg(income_total), 2)         as avg_income,
+        round(avg(credit_amount), 2)        as avg_credit_amount,
+        round(avg(ext_source_mean), 4)      as avg_ext_score
+    from risk_scored
+    group by 1, 2, 3, 4, 5
+)
+
+select * from final
+  )
+23:46:30.271010 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_loan_performance" rename to "mart_loan_performance__dbt_backup"
+23:46:30.683005 [debug]: Query executed on node model.banking_analytics.mart_application_funnel:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_application_funnel", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_application_funnel__dbt_tmp" rename to "mart_application_funnel"
+23:46:30.686676 [debug]: Applying DROP to: "dev"."analytics"."mart_application_funnel__dbt_backup"
+23:46:31.081849 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_customer_risk" rename to "mart_customer_risk__dbt_backup"
+23:46:31.308085 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_loan_performance__dbt_tmp" rename to "mart_loan_performance"
+23:46:31.309559 [debug]: Applying DROP to: "dev"."analytics"."mart_loan_performance__dbt_backup"
+23:46:31.522134 [debug]: Query executed on node model.banking_analytics.mart_application_funnel:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_application_funnel", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+drop table if exists "dev"."analytics"."mart_application_funnel__dbt_backup" cascade
+23:46:31.523393 [info ]: Finished running [  3.83s] model analytics.mart_application_funnel [success]
+23:46:31.523485 [info ]:  Succeeded [  3.83s] model analytics.mart_application_funnel (table)
+23:46:31.523684 [info ]: Started test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:46:31.523716 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:46:31.523789 [info ]: Started test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:46:31.523803 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:46:31.532088 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_application_funnel_contract_type.aab36b4691 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_application_funnel_contract_type.sql
+23:46:31.532088 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_application_funnel_total_applications.5992e63800 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_application_funnel_total_applications.sql
+23:46:31.532306 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type [success]
+23:46:31.532411 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type
+23:46:31.532448 [debug]: Finished rendering [  0.01s] test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications [success]
+23:46:31.532487 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications
+23:46:31.535743 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_application_funnel_contract_type.aab36b4691"
+23:46:31.535787 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_application_funnel_total_applications.5992e63800"
+23:46:31.728928 [debug]: Query executed on node test.banking_analytics.not_null_mart_application_funnel_contract_type.aab36b4691:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_application_funnel_contract_type.aab36b4691", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select contract_type
+from "dev"."analytics"."mart_application_funnel"
+where contract_type is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:31.728924 [debug]: Query executed on node test.banking_analytics.not_null_mart_application_funnel_total_applications.5992e63800:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_application_funnel_total_applications.5992e63800", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_applications
+from "dev"."analytics"."mart_application_funnel"
+where total_applications is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:31.730915 [info ]: Finished running [  0.20s] test analytics_dbt_test__audit.not_null_mart_application_funnel_contract_type [pass]
+23:46:31.731080 [info ]:     Passed [  0.21s] test  not_null_mart_application_funnel_contract_type
+23:46:31.731192 [info ]: Finished running [  0.20s] test analytics_dbt_test__audit.not_null_mart_application_funnel_total_applications [pass]
+23:46:31.731231 [info ]:     Passed [  0.21s] test  not_null_mart_application_funnel_total_applications
+23:46:31.962460 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+alter table "dev"."analytics"."mart_customer_risk__dbt_tmp" rename to "mart_customer_risk"
+23:46:31.965189 [debug]: Applying DROP to: "dev"."analytics"."mart_customer_risk__dbt_backup"
+23:46:32.305107 [debug]: Query executed on node model.banking_analytics.mart_loan_performance:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_loan_performance", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+drop table if exists "dev"."analytics"."mart_loan_performance__dbt_backup" cascade
+23:46:32.306436 [info ]: Finished running [  4.62s] model analytics.mart_loan_performance [success]
+23:46:32.306541 [info ]:  Succeeded [  4.62s] model analytics.mart_loan_performance (table)
+23:46:32.306713 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:46:32.306743 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:46:32.306780 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:46:32.306792 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:46:32.306814 [info ]: Started test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:46:32.306825 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:46:32.310970 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_default_rate_pct.sql
+23:46:32.310970 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_total_applications.sql
+23:46:32.310970 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef at target/compiled/banking_analytics/target/generic_tests/not_null_mart_loan_performance_contract_type.sql
+23:46:32.311148 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct [success]
+23:46:32.311236 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct
+23:46:32.311265 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications [success]
+23:46:32.311298 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications
+23:46:32.311318 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type [success]
+23:46:32.311352 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type
+23:46:32.314233 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa"
+23:46:32.314358 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3"
+23:46:32.314391 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef"
+23:46:32.426977 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_total_applications.1fc0b0c0a3", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select total_applications
+from "dev"."analytics"."mart_loan_performance"
+where total_applications is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:32.428299 [info ]: Finished running [  0.12s] test analytics_dbt_test__audit.not_null_mart_loan_performance_total_applications [pass]
+23:46:32.428461 [info ]:     Passed [  0.12s] test  not_null_mart_loan_performance_total_applications
+23:46:32.546422 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_default_rate_pct.042d8f9afa", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select default_rate_pct
+from "dev"."analytics"."mart_loan_performance"
+where default_rate_pct is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:32.547391 [debug]: Query executed on node test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_loan_performance_contract_type.5e24c9f9ef", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select contract_type
+from "dev"."analytics"."mart_loan_performance"
+where contract_type is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:32.547659 [info ]: Finished running [  0.24s] test analytics_dbt_test__audit.not_null_mart_loan_performance_default_rate_pct [pass]
+23:46:32.547812 [info ]:     Passed [  0.24s] test  not_null_mart_loan_performance_default_rate_pct
+23:46:32.548299 [info ]: Finished running [  0.24s] test analytics_dbt_test__audit.not_null_mart_loan_performance_contract_type [pass]
+23:46:32.548381 [info ]:     Passed [  0.24s] test  not_null_mart_loan_performance_contract_type
+23:46:32.908807 [debug]: Query executed on node model.banking_analytics.mart_customer_risk:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "model.banking_analytics.mart_customer_risk", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+drop table if exists "dev"."analytics"."mart_customer_risk__dbt_backup" cascade
+23:46:32.910118 [info ]: Finished running [  4.55s] model analytics.mart_customer_risk [success]
+23:46:32.910273 [info ]:  Succeeded [  4.55s] model analytics.mart_customer_risk (table)
+23:46:32.910393 [info ]: Started test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:46:32.910424 [debug]: Started rendering test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:46:32.910468 [info ]: Started test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:46:32.910480 [debug]: Started rendering test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:46:32.910502 [info ]: Started test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:46:32.910512 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:46:32.910541 [info ]: Started test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:46:32.910553 [debug]: Started rendering test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:46:32.914303 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2 at target/compiled/banking_analytics/target/generic_tests/not_null_mart_customer_risk_risk_tier.sql
+23:46:32.914635 [debug]: Compiled SQL for node test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca at target/compiled/banking_analytics/target/generic_tests/not_null_mart_customer_risk_income_band.sql
+23:46:32.914635 [debug]: Compiled SQL for node test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8 at target/compiled/banking_analytics/target/generic_tests/accepted_values_mart_customer__8218e9e11881d0a67828ef2a6b1b4504.sql
+23:46:32.914635 [debug]: Compiled SQL for node test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360 at target/compiled/banking_analytics/target/generic_tests/accepted_values_mart_customer__26ef3cbb78ca16779f4d2cef03dcc5e4.sql
+23:46:32.914509 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier [success]
+23:46:32.914726 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier
+23:46:32.914763 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band [success]
+23:46:32.914814 [info ]: Started running test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band
+23:46:32.914842 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk [success]
+23:46:32.914929 [info ]: Started running test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:46:32.914961 [debug]: Finished rendering [  0.00s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income [success]
+23:46:32.914992 [info ]: Finished rendering [  6.01s] (15 nodes, 0 skipped, 0 errors)
+23:46:32.915071 [info ]: Started running test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:46:32.917944 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca"
+23:46:32.918808 [debug]: Writing runtime sql for node "test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2"
+23:46:32.919307 [debug]: Writing runtime sql for node "test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360"
+23:46:32.925838 [debug]: Writing runtime sql for node "test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8"
+23:46:33.023416 [debug]: Query executed on node test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_customer_risk_risk_tier.756e26daa2", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select risk_tier
+from "dev"."analytics"."mart_customer_risk"
+where risk_tier is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:33.024984 [debug]: Query executed on node test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.not_null_mart_customer_risk_income_band.5f2e15adca", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+
+
+select income_band
+from "dev"."analytics"."mart_customer_risk"
+where income_band is null
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:33.024879 [info ]: Finished running [  0.11s] test analytics_dbt_test__audit.not_null_mart_customer_risk_risk_tier [pass]
+23:46:33.025020 [info ]:     Passed [  0.11s] test  not_null_mart_customer_risk_risk_tier
+23:46:33.025727 [info ]: Finished running [  0.11s] test analytics_dbt_test__audit.not_null_mart_customer_risk_income_band [pass]
+23:46:33.025829 [info ]:     Passed [  0.11s] test  not_null_mart_customer_risk_income_band
+23:46:33.042798 [debug]: Query executed on node test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income.adf14925b8", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        income_band as value_field,
+        count(*) as n_records
+
+    from "dev"."analytics"."mart_customer_risk"
+    group by income_band
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Low Income','Mid Income','High Income'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:33.043923 [info ]: Finished running [  0.13s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income [pass]
+23:46:33.043999 [info ]:     Passed [  0.13s] test  accepted_values_mart_customer_risk_income_band__Low_Income__Mid_Income__High_Income
+23:46:33.115573 [debug]: Query executed on node test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360:
+/* {"app": "dbt", "dbt_version": "2.0.0", "node_id": "test.banking_analytics.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk.887e673360", "profile_name": "jaffle_shop_1", "target_name": "dev"} */
+select
+      count(*) as failures,
+      count(*) != 0 as should_warn,
+      count(*) != 0 as should_error
+    from (
+      
+    
+  
+    
+    
+
+with all_values as (
+
+    select
+        risk_tier as value_field,
+        count(*) as n_records
+
+    from "dev"."analytics"."mart_customer_risk"
+    group by risk_tier
+
+)
+
+select *
+from all_values
+where value_field not in (
+    'Low Risk','Medium Risk','High Risk'
+)
+
+
+
+  
+  
+      
+    ) dbt_internal_test
+23:46:33.116777 [info ]: Finished running [  0.20s] test analytics_dbt_test__audit.accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk [pass]
+23:46:33.116892 [info ]: Finished running [  6.20s] (15 nodes, 0 skipped, 0 errors)
+23:46:33.116945 [info ]:     Passed [  0.20s] test  accepted_values_mart_customer_risk_risk_tier__Low_Risk__Medium_Risk__High_Risk
+23:46:33.191104 [info ]: 
+==================== Execution Summary =====================
+Finished 'build' successfully for target 'dev' [7.2s]
+Processed: 6 models | 9 tests
+Summary: 15 total | 15 success

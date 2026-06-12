@@ -1,0 +1,1 @@
+{{ test_not_null(column_name="default_rate_pct", model=get_where_subquery(ref('mart_loan_performance'))) }}

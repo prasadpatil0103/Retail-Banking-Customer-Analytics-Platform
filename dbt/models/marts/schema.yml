@@ -1,0 +1,41 @@
+version: 2
+
+models:
+  - name: mart_loan_performance
+    description: "Loan performance metrics by segment"
+    columns:
+      - name: contract_type
+        tests:
+          - not_null
+      - name: total_applications
+        tests:
+          - not_null
+      - name: default_rate_pct
+        tests:
+          - not_null
+
+  - name: mart_customer_risk
+    description: "Customer risk tier classification"
+    columns:
+      - name: risk_tier
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Low Risk', 'Medium Risk', 'High Risk']
+      - name: income_band
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Low Income', 'Mid Income', 'High Income']
+
+  - name: mart_application_funnel
+    description: "Application funnel metrics"
+    columns:
+      - name: contract_type
+        tests:
+          - not_null
+      - name: total_applications
+        tests:
+          - not_null

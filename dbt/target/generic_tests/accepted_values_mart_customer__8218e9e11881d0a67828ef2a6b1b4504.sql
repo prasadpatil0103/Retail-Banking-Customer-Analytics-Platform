@@ -1,0 +1,1 @@
+{{ test_accepted_values(column_name="income_band", model=get_where_subquery(ref('mart_customer_risk')), values=["Low Income","Mid Income","High Income"]) }}
