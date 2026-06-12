@@ -14,43 +14,27 @@ End-to-end retail banking analytics platform built on AWS, covering data enginee
 
 ## Architecture
 
+```
 Kaggle Dataset (307K records)
-
-│
-
-▼
-
+        |
+        v
 AWS S3 (Raw Layer)
-
-│
-
-▼
-
+        |
+        v
 AWS Glue ETL (PySpark) — 5m 57s | 2 DPUs
-
-│
-
-▼
-
+        |
+        v
 AWS S3 (Cleaned Parquet — 6 tables)
-
-│
-
-▼
-
+        |
+        v
 Amazon Redshift Serverless
-
-│
-
-├──► dbt (6 models, 9 tests — 15/15 passed)
-
-├──► Apache Airflow (daily 06:00 UTC)
-
-├──► AWS CloudWatch (3 alarms)
-
-├──► Power BI (3 pages, 9 visuals)
-
-└──► ML Layer (XGBoost, Churn, LTV, SARIMA)
+        |
+        |——> dbt (6 models, 9 tests — 15/15 passed)
+        |——> Apache Airflow (daily 06:00 UTC)
+        |——> AWS CloudWatch (3 alarms)
+        |——> Power BI (3 pages, 9 visuals)
+        |——> ML Layer (XGBoost, Churn, LTV, SARIMA)
+```
 
 ---
 
@@ -122,7 +106,9 @@ Link: [kaggle.com/c/home-credit-default-risk](https://www.kaggle.com/c/home-cred
 
 ### Airflow DAG
 
-trigger_glue_job → wait_for_glue → run_dbt_build → data_quality_check → notify_success
+```
+trigger_glue_job > wait_for_glue > run_dbt_build > data_quality_check > notify_success
+```
 
 - Schedule: daily at 06:00 UTC
 - Retries: 3 per task
@@ -135,7 +121,7 @@ trigger_glue_job → wait_for_glue → run_dbt_build → data_quality_check → 
 
 | Test | Statistic | P-value | Result |
 |---|---|---|---|
-| Cash vs Revolving default rate | χ² = 293.15 | p < 0.0001 | Significant |
+| Cash vs Revolving default rate | X2 = 293.15 | p < 0.0001 | Significant |
 | Income: defaulters vs non-defaulters | t = -2.21 | p = 0.027 | Significant |
 
 - Required sample size: **8,572 per group**
@@ -161,7 +147,7 @@ trigger_glue_job → wait_for_glue → run_dbt_build → data_quality_check → 
 | XGBoost (production) | **0.6918** | 0.82 |
 | Random Forest | 0.6766 | 0.74 |
 | Churn Model | **0.9019** | 0.92 |
-| LTV Model | R² = 0.05 | — |
+| LTV Model | R2 = 0.05 | — |
 | SARIMA Forecast | MAE = 0.0055 | — |
 
 ### SHAP Top 5 Predictors
@@ -187,7 +173,7 @@ trigger_glue_job → wait_for_glue → run_dbt_build → data_quality_check → 
 
 ## Key Business Findings
 
-1. **External credit score is the #1 predictor** — customers with ext_source_mean below 0.35 default at 3× the baseline rate
+1. **External credit score is the #1 predictor** — customers with ext_source_mean below 0.35 default at 3x the baseline rate
 2. **Cash loans default at 8.35% vs revolving at 5.48%** — statistically significant (p < 0.0001)
 3. **Lower secondary education customers default at 11%** vs academic degree holders at 2%
 4. **Customers aged 20-30 default at 12%** vs customers over 60 at 4%
@@ -199,8 +185,8 @@ trigger_glue_job → wait_for_glue → run_dbt_build → data_quality_check → 
 ## How to Run
 
 ### Setup
-```bash
-git clone https://github.com/yourusername/Retail-Banking-Customer-Analytics-Platform
+```
+git clone https://github.com/prasadpatil0103/Retail-Banking-Customer-Analytics-Platform
 cd Retail-Banking-Customer-Analytics-Platform
 python -m venv venv
 source venv/bin/activate
@@ -209,29 +195,21 @@ pip install -r requirements.txt
 
 ### Environment Variables
 Create `.env` file:
-
+```
 AWS_ACCESS_KEY_ID=your_key
-
 AWS_SECRET_ACCESS_KEY=your_secret
-
 AWS_REGION=us-east-1
-
 REDSHIFT_HOST=banking-workgroup.608325783808.us-east-1.redshift-serverless.amazonaws.com
-
 REDSHIFT_PORT=5439
-
 REDSHIFT_DB=dev
-
 REDSHIFT_USER=dbadmin
-
 REDSHIFT_PASSWORD=your_password
-
 S3_BUCKET=retail-banking-analytics-prasad
-
 REDSHIFT_IAM_ROLE=arn:aws:iam::608325783808:role/banking-redshift-s3-role
+```
 
 ### Run Pipeline
-```bash
+```
 aws s3 cp data/raw/ s3://retail-banking-analytics-prasad/raw/home-credit/ --recursive
 aws glue start-job-run --job-name banking-etl-job
 python warehouse/load_to_redshift.py
@@ -239,7 +217,7 @@ cd dbt && dbt build
 ```
 
 ### Run ML Models
-```bash
+```
 python models/credit_risk_xgboost.py
 python models/random_forest_credit_risk.py
 python models/ltv_churn_models.py
@@ -249,74 +227,48 @@ python models/time_series_forecast.py
 ---
 
 ## Project Structure
+
+```
 Retail-Banking-Customer-Analytics-Platform/
-
 ├── README.md
-
+├── LICENSE
 ├── data/raw/                    # gitignored
-
 ├── ingestion/
-
 │   └── glue_etl_job.py
-
 ├── warehouse/
-
 │   ├── redshift_schema.sql
-
 │   └── load_to_redshift.py
-
 ├── dbt/
-
 │   ├── dbt_project.yml
-
 │   └── models/
-
 │       ├── staging/
-
 │       └── marts/
-
 ├── orchestration/
-
 │   └── airflow_dag.py
-
 ├── monitoring/
-
 │   └── cloudwatch_alerts.py
-
 ├── analytics/
-
 │   ├── ab_testing_framework.py
-
 │   ├── kpi_analysis.sql
-
 │   └── cohort_analysis.py
-
 ├── dashboards/
-
 │   └── banking_kpi.pbix
-
 └── models/
+    ├── credit_risk_xgboost.py
+    ├── random_forest_credit_risk.py
+    ├── ltv_churn_models.py
+    ├── time_series_forecast.py
+    └── outputs/
+        ├── roc_curve.png
+        ├── shap_summary.png
+        └── sarima_forecast.png
+```
 
-├── credit_risk_xgboost.py
+---
 
-├── random_forest_credit_risk.py
+## License
 
-├── ltv_churn_models.py
-
-├── time_series_forecast.py
-
-└── outputs/
-
-├── xgboost_credit_risk.pkl
-
-├── churn_model.pkl
-
-├── roc_curve.png
-
-├── shap_summary.png
-
-└── sarima_forecast.png
-
+MIT License — see [LICENSE](LICENSE) file for details.
 
 ---
 
