@@ -12,3 +12,4 @@ models/outputs/*.pkl
 *.db
 *.db-shm
 *.db-wal
+banking-project-user_accessKeys.csv
